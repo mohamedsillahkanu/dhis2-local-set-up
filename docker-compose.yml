@@ -33,10 +33,12 @@ services:
       DHIS2_DATABASE_NAME: dhis2
       DHIS2_DATABASE_USERNAME: dhis
       DHIS2_DATABASE_PASSWORD: dhis
+      DHIS2_HOME: /DHIS2_home
     ports:
       - "8080:8080"
     volumes:
       - dhis2-data:/DHIS2_home
+      - ./dhis.conf:/DHIS2_home/dhis.conf
     restart: unless-stopped
     networks:
       - dhis2-network
