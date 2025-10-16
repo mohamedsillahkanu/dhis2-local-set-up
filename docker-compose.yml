@@ -33,13 +33,26 @@ services:
       DHIS2_DATABASE_NAME: dhis2
       DHIS2_DATABASE_USERNAME: dhis
       DHIS2_DATABASE_PASSWORD: dhis
+      DHIS2_HOME: /opt/dhis2
     ports:
       - "8080:8080"
     volumes:
-      - dhis2-data:/DHIS2_home
+      - dhis2-data:/opt/dhis2
     restart: unless-stopped
     networks:
       - dhis2-network
+    command: >
+      sh -c "
+      mkdir -p /opt/dhis2 &&
+      cat > /opt/dhis2/dhis.conf <<EOF
+      connection.dialect = org.hibernate.dialect.PostgreSQLDialect
+      connection.driver_class = org.postgresql.Driver
+      connection.url = jdbc:postgresql://database:5432/dhis2
+      connection.username = dhis
+      connection.password = dhis
+      EOF
+      catalina.sh run
+      "
 
 volumes:
   dhis2-db-data:
