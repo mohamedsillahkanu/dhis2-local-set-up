@@ -21,7 +21,7 @@ services:
       - dhis2-test-network
 
   dhis2:
-    image: dhis2/core:2.40.5
+    image: dhis2/core:2.42.1
     container_name: dhis2_test
     depends_on:
       database:
@@ -36,7 +36,7 @@ services:
       - "8010:8080"
     volumes:
       - dhis2-test-data:/DHIS2_home
-      - ./dhis.conf:/DHIS2_home/dhis.conf
+      - ./dhis.conf:/opt/dhis2/dhis.conf
     restart: unless-stopped
     networks:
       - dhis2-test-network
