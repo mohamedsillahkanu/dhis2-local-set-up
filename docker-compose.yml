@@ -21,7 +21,7 @@ services:
       - dhis2-test-network
 
   dhis2:
-    image: dhis2/core:2.42.1
+    image: dhis2/core:2.40.5
     container_name: dhis2_test
     depends_on:
       database:
