@@ -27,7 +27,7 @@ Install DHIS2 locally in under 5 minutes with Docker - **automatically installs 
 2. **Copy and paste this:**
 
 ```powershell
-git clone https://github.com/YOUR-USERNAME/dhis2-quick-install.git
+git clone https://github.com/mohamedsillahkanu/dhis2-local-set-up.git
 cd dhis2-quick-install
 .\install-windows.ps1
 ```
