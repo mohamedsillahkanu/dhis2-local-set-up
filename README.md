@@ -227,7 +227,7 @@ docker run --rm -v dhis2-data:/data -v ${PWD}:/backup alpine tar czf /backup/dhi
 ### Update DHIS2 to Newer Version
 
 1. Edit `docker-compose.yml`
-2. Change `image: dhis2/core:2.40.5` to desired version
+2. Change `image: dhis2/core:2.43.1.0` to desired version
 3. Run:
 ```powershell
 docker-compose down
