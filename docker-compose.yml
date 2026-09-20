@@ -23,7 +23,7 @@ services:
       - dhis2-network
 
   dhis2:
-    image: dhis2/core:2.40.5
+    image: dhis2/core:2.42.6.0
     container_name: dhis2-app
     depends_on:
       database:
@@ -35,7 +35,7 @@ services:
       DHIS2_DATABASE_PASSWORD: dhis
       DHIS2_HOME: /DHIS2_home
     ports:
-      - "8080:8080"
+      - "8010:8080"
     volumes:
       - dhis2-data:/DHIS2_home
       - ./dhis.conf:/DHIS2_home/dhis.conf
